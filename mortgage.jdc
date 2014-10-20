@@ -5,12 +5,12 @@ class Mortgage {
 	int years;
 }
 
-void totalMortgageCost(double total, double rate, int years) {
+totalMortgageCost(double total, double rate, int years) {
 	while (years != 0) {
-		total = total * (1 + (mortgage.rate / 100));
+		total = total * (1 + (rate / 100));
 		years = years - 1;
 	}
-	return total
+	return total;
 }
 
 Mortgage myMortgage = new Mortgage();
@@ -20,5 +20,5 @@ print("Please enter the number of years you are repaying: ");
 int myMortgage.years = System.console().readInt();
 print("Please enter your interest rate: ");
 double myMortgage.rate = System.console().readDouble();
-double myMortgage.totalCost = totalMortgageCost(mortgage.borrowed, mortgage.rate, mortgage.years);
+double myMortgage.totalCost = totalMortgageCost(myMortgage.borrowed, myMortgage.rate, myMortgage.years);
 println("The total cost of your motgage is: " + myMortgage.totalCost);
