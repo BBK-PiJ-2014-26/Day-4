@@ -1,10 +1,15 @@
-int decimal2binary(int x) {
-	String result = null
-	int power = (x / 2) - 1	
-	char nought = '0'
-	char one = '1'
-	while (x!= 0) {
-		int temp = Math.pow(2, power)
+String decimal2binary(int x) {
+	String result = ""	
+	String nought = "0"
+	String one = "1"
+	int temp = x
+	int power = 0
+	for (int i = 0; temp > 1; i++) {
+		temp = temp / 2
+		power++
+	}
+	while (power > -1) {
+		temp = Math.pow(2, power)
 		if (temp <= x) {
 			result = result + one
 			x = x - temp
@@ -12,6 +17,7 @@ int decimal2binary(int x) {
 		} else {
 			result = result + nought
 			power--
+		}
 	}
 	return result
 }
@@ -19,5 +25,5 @@ int decimal2binary(int x) {
 println "Please enter a number to convert."
 String str = System.console().readLine()
 int x = Integer.parseInt(str)
-int y = decimal2binary(x)
+String y = decimal2binary(x)
 println "Equals: " + y
